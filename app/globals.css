@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-cream: #FAF6F0;
+  --color-blush: #F2D8D0;
+  --color-rose: #D4A5A0;
+  --color-rose-deep: #B87B75;
+  --color-sage: #B8C4B1;
+  --color-gold: #C6A97A;
+  --color-bark: #4A3728;
+  --color-muted: #9B8070;
+  --font-display: var(--font-cormorant);
+  --font-body: var(--font-raleway);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FAF6F0;
+  color: #4A3728;
+  font-family: var(--font-raleway), sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Ambient background gradients */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 25%, rgba(242, 216, 208, 0.45) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 85% 75%, rgba(184, 196, 177, 0.3) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 70% 20%, rgba(198, 169, 122, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Animations ── */
+
+@keyframes petalFall {
+  0% {
+    transform: translateY(-60px) rotate(0deg) translateX(0px);
+    opacity: 0;
+  }
+  8% { opacity: 0.55; }
+  92% { opacity: 0.25; }
+  100% {
+    transform: translateY(105vh) rotate(600deg) translateX(60px);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-6px) rotate(0.5deg); }
+  66% { transform: translateY(-10px) rotate(-0.5deg); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes revealLine {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* ── Utility classes ── */
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.4s ease both;
+}
+
+.petal {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50% 5% 50% 5%;
+  animation: petalFall linear infinite;
+  z-index: 1;
+  top: -40px;
+}
+
+/* ── Section dividers ── */
+
+.gold-line {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #C6A97A 30%, #C6A97A 70%, transparent);
+  animation: revealLine 1.5s ease both;
+  transform-origin: center;
+}
+
+/* ── Countdown cards ── */
+
+.countdown-card {
+  background: rgba(250, 246, 240, 0.75);
+  border: 1px solid rgba(198, 169, 122, 0.3);
+  border-radius: 3px;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.countdown-card:hover {
+  border-color: rgba(198, 169, 122, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ── Quote ── */
+
+.quote-text {
+  font-family: var(--font-cormorant), serif;
+  font-style: italic;
+  font-weight: 300;
+  color: #9B8070;
+}
