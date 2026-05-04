@@ -7,8 +7,8 @@
   --color-rose-deep: #B87B75;
   --color-sage: #B8C4B1;
   --color-gold: #C6A97A;
-  --color-bark: #4A3728;
-  --color-muted: #9B8070;
+  --color-bark: #3E6830;
+  --color-muted: #6B8A58;
   --font-display: var(--font-cormorant);
   --font-body: var(--font-raleway);
 }
@@ -18,7 +18,6 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
 }
 
 html {
@@ -27,7 +26,7 @@ html {
 
 body {
   background-color: #FAF6F0;
-  color: #4A3728;
+  color: #3E6830;
   font-family: var(--font-raleway), sans-serif;
   overflow-x: hidden;
   position: relative;
@@ -141,5 +140,5 @@ body::before {
   font-family: var(--font-cormorant), serif;
   font-style: italic;
   font-weight: 300;
-  color: #9B8070;
+  color: #6B8A58;
 }

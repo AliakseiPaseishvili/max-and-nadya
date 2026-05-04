@@ -10,7 +10,7 @@ const labelStyle: React.CSSProperties = {
   fontSize: '0.6rem',
   textTransform: 'uppercase',
   letterSpacing: '0.25em',
-  color: '#9B8070',
+  color: '#6B8A58',
   display: 'block',
   marginBottom: '0.5rem',
 };
@@ -25,7 +25,7 @@ const inputStyle: React.CSSProperties = {
   fontWeight: 300,
   fontStyle: 'italic',
   fontSize: '1.1rem',
-  color: '#4A3728',
+  color: '#3E6830',
   padding: '0.35rem 0 0.5rem',
   transition: 'border-color 0.25s ease',
 };
@@ -61,7 +61,7 @@ export default function RsvpForm() {
                 fontStyle: 'italic',
                 fontWeight: 300,
                 fontSize: 'clamp(1.4rem, 4vw, 2rem)',
-                color: '#4A3728',
+                color: '#3E6830',
                 marginBottom: '0.75rem',
               }}
             >
@@ -72,7 +72,7 @@ export default function RsvpForm() {
                 fontFamily: 'var(--font-raleway), sans-serif',
                 fontWeight: 300,
                 fontSize: '0.8rem',
-                color: '#9B8070',
+                color: '#6B8A58',
                 letterSpacing: '0.08em',
               }}
             >
@@ -87,7 +87,7 @@ export default function RsvpForm() {
                 fontStyle: 'italic',
                 fontWeight: 300,
                 fontSize: 'clamp(1.4rem, 4vw, 2rem)',
-                color: '#4A3728',
+                color: '#3E6830',
                 marginBottom: '0.75rem',
               }}
             >
@@ -98,7 +98,7 @@ export default function RsvpForm() {
                 fontFamily: 'var(--font-raleway), sans-serif',
                 fontWeight: 300,
                 fontSize: '0.8rem',
-                color: '#9B8070',
+                color: '#6B8A58',
                 letterSpacing: '0.08em',
               }}
             >
@@ -133,7 +133,7 @@ export default function RsvpForm() {
                   fontStyle: 'italic',
                   fontWeight: 300,
                   fontSize: '1.05rem',
-                  color: isSelected ? '#4A3728' : '#9B8070',
+                  color: isSelected ? '#3E6830' : '#6B8A58',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
                   letterSpacing: '0.03em',
@@ -203,7 +203,7 @@ export default function RsvpForm() {
           fontSize: '0.68rem',
           textTransform: 'uppercase',
           letterSpacing: '0.28em',
-          color: loading ? '#B8A090' : '#4A3728',
+          color: loading ? '#6A9455' : '#3E6830',
           cursor: loading || !attending || !name.trim() || !email.trim() ? 'not-allowed' : 'pointer',
           opacity: !attending || !name.trim() || !email.trim() ? 0.5 : 1,
           transition: 'all 0.25s ease',

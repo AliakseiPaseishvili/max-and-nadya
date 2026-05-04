@@ -91,7 +91,7 @@ export default function Countdown() {
               fontWeight: 300,
               fontStyle: 'italic',
               fontSize: 'clamp(2.8rem, 7vw, 4.5rem)',
-              color: '#4A3728',
+              color: '#3E6830',
               lineHeight: 1,
               letterSpacing: '-0.02em',
               fontVariantNumeric: 'tabular-nums',
@@ -106,7 +106,7 @@ export default function Countdown() {
               fontSize: '0.6rem',
               textTransform: 'uppercase',
               letterSpacing: '0.22em',
-              color: '#9B8070',
+              color: '#6B8A58',
               marginTop: '0.6rem',
               whiteSpace: 'nowrap',
             }}

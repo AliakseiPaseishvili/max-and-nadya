@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Countdown from './components/Countdown';
 import RsvpForm from './components/RsvpForm';
 
@@ -108,7 +109,7 @@ export default function Home() {
       <FloatingPetals />
 
       {/* Hero */}
-      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 text-center">
+      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 py-24 text-center">
 
         <div className="animate-float mb-6" style={{ animationDelay: '0.5s' }}>
           <BotanicalSpray />
@@ -122,7 +123,7 @@ export default function Home() {
             fontSize: '0.68rem',
             textTransform: 'uppercase',
             letterSpacing: '0.32em',
-            color: '#9B8070',
+            color: '#6B8A58',
             marginBottom: '2rem',
             animationDelay: '0.3s',
           }}
@@ -131,13 +132,13 @@ export default function Home() {
         </p>
 
         <h1
-          className="animate-fade-in-up"
+          className="animate-fade-in-up flex flex-col sm:flex-row items-center"
           style={{
             fontFamily: 'var(--font-cormorant), serif',
             fontWeight: 300,
             fontStyle: 'italic',
-            fontSize: 'clamp(3.5rem, 12vw, 8rem)',
-            color: '#4A3728',
+            fontSize: 'clamp(3rem, 12vw, 8rem)',
+            color: '#3E6830',
             lineHeight: 1.05,
             letterSpacing: '-0.01em',
             marginBottom: '1.25rem',
@@ -146,7 +147,7 @@ export default function Home() {
         >
           Максим
           <span style={{ color: '#D4A5A0', margin: '0 0.15em', fontWeight: 300 }}>&</span>
-          Надя
+          Надежда
         </h1>
 
         <p
@@ -156,7 +157,7 @@ export default function Home() {
             fontStyle: 'italic',
             fontWeight: 300,
             fontSize: 'clamp(1rem, 3vw, 1.4rem)',
-            color: '#B8A090',
+            color: '#6A9455',
             letterSpacing: '0.04em',
             marginBottom: '2.5rem',
             animationDelay: '0.7s',
@@ -188,7 +189,7 @@ export default function Home() {
               fontFamily: 'var(--font-cormorant), serif',
               fontWeight: 400,
               fontSize: 'clamp(1.6rem, 5vw, 2.4rem)',
-              color: '#4A3728',
+              color: '#3E6830',
               letterSpacing: '0.04em',
             }}
           >
@@ -204,7 +205,7 @@ export default function Home() {
             fontSize: '0.85rem',
             textTransform: 'uppercase',
             letterSpacing: '0.25em',
-            color: '#9B8070',
+            color: '#6B8A58',
             marginBottom: '0.5rem',
             animationDelay: '1.1s',
           }}
@@ -233,7 +234,7 @@ export default function Home() {
       </section>
 
       {/* Photos */}
-      <section className="relative z-10 py-20 px-6">
+      <section className="relative z-10 py-20 px-4 sm:px-6">
         <p
           style={{
             fontFamily: 'var(--font-raleway), sans-serif',
@@ -241,7 +242,7 @@ export default function Home() {
             fontSize: '0.65rem',
             textTransform: 'uppercase',
             letterSpacing: '0.3em',
-            color: '#9B8070',
+            color: '#6B8A58',
             textAlign: 'center',
             marginBottom: '3rem',
           }}
@@ -249,120 +250,88 @@ export default function Home() {
           Жених и невеста
         </p>
 
-        <div
-          style={{
-            display: 'flex',
-            gap: 'clamp(1rem, 4vw, 3rem)',
-            justifyContent: 'center',
-            alignItems: 'flex-end',
-            maxWidth: '680px',
-            margin: '0 auto',
-          }}
-        >
-          {/* Максим */}
-          <div style={{ flex: 1, maxWidth: '280px' }}>
-            {/* Замените div на <Image> когда будут готовы фотографии */}
-            <div
-              style={{
-                aspectRatio: '3 / 4',
-                background: 'linear-gradient(135deg, rgba(242,216,208,0.5) 0%, rgba(184,196,177,0.35) 100%)',
-                border: '1px solid rgba(198,169,122,0.25)',
-                borderRadius: '2px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                overflow: 'hidden',
-                position: 'relative',
-              }}
-            >
-              {/* Заменить на: <Image src="/photos/maxim.jpg" alt="Максим" fill style={{ objectFit: 'cover' }} /> */}
-              <span
-                style={{
-                  fontFamily: 'var(--font-cormorant), serif',
-                  fontStyle: 'italic',
-                  fontSize: '1rem',
-                  color: '#B8A090',
-                  opacity: 0.6,
-                  userSelect: 'none',
-                }}
-              >
-                Фото
-              </span>
-            </div>
-            <p
-              style={{
-                fontFamily: 'var(--font-cormorant), serif',
-                fontStyle: 'italic',
-                fontWeight: 300,
-                fontSize: 'clamp(1.4rem, 4vw, 1.9rem)',
-                color: '#4A3728',
-                textAlign: 'center',
-                marginTop: '1rem',
-                letterSpacing: '0.03em',
-              }}
-            >
-              Максим
-            </p>
-          </div>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-[clamp(1.5rem,5vw,3.5rem)] w-full">
 
-          {/* Золотой разделитель */}
-          <div
+          {/* Максим — скрыт на мобиле, виден на sm+ */}
+          <p
+            className="hidden sm:block"
             style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '0.5rem',
-              paddingBottom: '3rem',
+              fontFamily: 'var(--font-cormorant), serif',
+              fontStyle: 'italic',
+              fontWeight: 300,
+              fontSize: 'clamp(1.6rem, 5vw, 2.2rem)',
+              color: '#3E6830',
+              letterSpacing: '0.03em',
+              textAlign: 'right',
               flexShrink: 0,
             }}
           >
-            <div style={{ width: '1px', height: '40px', background: 'linear-gradient(to bottom, transparent, #C6A97A)' }} />
-            <span style={{ color: '#C6A97A', fontSize: '0.6rem' }}>✦</span>
-            <div style={{ width: '1px', height: '40px', background: 'linear-gradient(to top, transparent, #C6A97A)' }} />
+            Максим
+          </p>
+
+          {/* Фото */}
+          <div
+            style={{
+              position: 'relative',
+              width: 'clamp(240px, 65vw, 420px)',
+              aspectRatio: '3 / 4',
+              flexShrink: 0,
+              border: '1px solid rgba(198,169,122,0.3)',
+              borderRadius: '2px',
+              overflow: 'hidden',
+              boxShadow: '0 8px 40px rgba(62,104,48,0.1)',
+            }}
+          >
+            <Image
+              src="/max-and-nadya.JPG"
+              alt="Максим и Надежда"
+              fill
+              style={{ objectFit: 'cover', objectPosition: 'center top' }}
+              sizes="(max-width: 640px) 65vw, 420px"
+            />
           </div>
 
-          {/* Надя — чуть выше для асимметрии */}
-          <div style={{ flex: 1, maxWidth: '280px', marginBottom: '2rem' }}>
-            <div
-              style={{
-                aspectRatio: '3 / 4',
-                background: 'linear-gradient(135deg, rgba(212,165,160,0.35) 0%, rgba(242,216,208,0.5) 100%)',
-                border: '1px solid rgba(198,169,122,0.25)',
-                borderRadius: '2px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                overflow: 'hidden',
-                position: 'relative',
-              }}
-            >
-              {/* Заменить на: <Image src="/photos/nadya.jpg" alt="Надя" fill style={{ objectFit: 'cover' }} /> */}
-              <span
-                style={{
-                  fontFamily: 'var(--font-cormorant), serif',
-                  fontStyle: 'italic',
-                  fontSize: '1rem',
-                  color: '#B8A090',
-                  opacity: 0.6,
-                  userSelect: 'none',
-                }}
-              >
-                Фото
-              </span>
-            </div>
-            <p
-              style={{
-                fontFamily: 'var(--font-cormorant), serif',
-                fontStyle: 'italic',
-                fontWeight: 300,
-                fontSize: 'clamp(1.4rem, 4vw, 1.9rem)',
-                color: '#4A3728',
-                textAlign: 'center',
-                marginTop: '1rem',
-                letterSpacing: '0.03em',
-              }}
-            >
-              Надя
+          {/* Надежда — скрыта на мобиле, видна на sm+ */}
+          <p
+            className="hidden sm:block"
+            style={{
+              fontFamily: 'var(--font-cormorant), serif',
+              fontStyle: 'italic',
+              fontWeight: 300,
+              fontSize: 'clamp(1.6rem, 5vw, 2.2rem)',
+              color: '#3E6830',
+              letterSpacing: '0.03em',
+              textAlign: 'left',
+              flexShrink: 0,
+            }}
+          >
+            Надежда
+          </p>
+
+          {/* Имена под фото — только на мобиле */}
+          <div
+            className="flex sm:hidden items-center justify-center gap-4"
+          >
+            <p style={{
+              fontFamily: 'var(--font-cormorant), serif',
+              fontStyle: 'italic',
+              fontWeight: 300,
+              fontSize: 'clamp(1.4rem, 6vw, 1.9rem)',
+              color: '#3E6830',
+              letterSpacing: '0.03em',
+            }}>
+              Максим
+            </p>
+            <span style={{ color: '#C6A97A', fontSize: '0.55rem' }}>✦</span>
+            <p style={{
+              fontFamily: 'var(--font-cormorant), serif',
+              fontStyle: 'italic',
+              fontWeight: 300,
+              fontSize: 'clamp(1.4rem, 6vw, 1.9rem)',
+              color: '#3E6830',
+              letterSpacing: '0.03em',
+            }}>
+              Надежда
             </p>
           </div>
         </div>
@@ -370,7 +339,7 @@ export default function Home() {
 
       {/* Dress code */}
       <section
-        className="relative z-10 py-20 px-6 text-center"
+        className="relative z-10 py-20 px-4 sm:px-6 text-center"
         style={{ borderTop: '1px solid rgba(198,169,122,0.15)' }}
       >
         <p
@@ -380,7 +349,7 @@ export default function Home() {
             fontSize: '0.65rem',
             textTransform: 'uppercase',
             letterSpacing: '0.3em',
-            color: '#9B8070',
+            color: '#6B8A58',
             marginBottom: '0.75rem',
           }}
         >
@@ -393,7 +362,7 @@ export default function Home() {
             fontStyle: 'italic',
             fontWeight: 300,
             fontSize: 'clamp(1.5rem, 4vw, 2.2rem)',
-            color: '#4A3728',
+            color: '#3E6830',
             marginBottom: '1.25rem',
           }}
         >
@@ -405,7 +374,7 @@ export default function Home() {
             fontFamily: 'var(--font-raleway), sans-serif',
             fontWeight: 300,
             fontSize: '0.85rem',
-            color: '#9B8070',
+            color: '#6B8A58',
             maxWidth: '420px',
             margin: '0 auto 2.5rem',
             lineHeight: 1.75,
@@ -451,7 +420,7 @@ export default function Home() {
                   fontFamily: 'var(--font-raleway), sans-serif',
                   fontWeight: 300,
                   fontSize: '0.55rem',
-                  color: '#9B8070',
+                  color: '#6B8A58',
                   letterSpacing: '0.05em',
                   textAlign: 'center',
                   maxWidth: '50px',
@@ -482,7 +451,7 @@ export default function Home() {
               fontFamily: 'var(--font-raleway), sans-serif',
               fontWeight: 300,
               fontSize: '0.72rem',
-              color: '#9B8070',
+              color: '#6B8A58',
               letterSpacing: '0.08em',
             }}
           >
@@ -493,7 +462,7 @@ export default function Home() {
 
       {/* Countdown */}
       <section
-        className="relative z-10 py-24 px-6 text-center"
+        className="relative z-10 py-24 px-4 sm:px-6 text-center"
         style={{
           background: 'linear-gradient(to bottom, rgba(242,216,208,0.18), rgba(242,216,208,0.28), rgba(242,216,208,0.18))',
           borderTop: '1px solid rgba(198,169,122,0.18)',
@@ -507,7 +476,7 @@ export default function Home() {
             fontSize: '0.65rem',
             textTransform: 'uppercase',
             letterSpacing: '0.3em',
-            color: '#9B8070',
+            color: '#6B8A58',
             marginBottom: '0.75rem',
           }}
         >
@@ -520,7 +489,7 @@ export default function Home() {
             fontStyle: 'italic',
             fontWeight: 300,
             fontSize: 'clamp(1.3rem, 4vw, 1.9rem)',
-            color: '#4A3728',
+            color: '#3E6830',
             marginBottom: '3rem',
           }}
         >
@@ -541,7 +510,7 @@ export default function Home() {
 
       {/* RSVP */}
       <section
-        className="relative z-10 py-20 px-6 text-center"
+        className="relative z-10 py-20 px-4 sm:px-6 text-center"
         style={{
           borderTop: '1px solid rgba(198,169,122,0.15)',
           borderBottom: '1px solid rgba(198,169,122,0.15)',
@@ -555,7 +524,7 @@ export default function Home() {
             fontSize: '0.65rem',
             textTransform: 'uppercase',
             letterSpacing: '0.3em',
-            color: '#9B8070',
+            color: '#6B8A58',
             marginBottom: '0.75rem',
             marginTop: '1.5rem',
           }}
@@ -569,7 +538,7 @@ export default function Home() {
             fontStyle: 'italic',
             fontWeight: 300,
             fontSize: 'clamp(1.4rem, 4vw, 2rem)',
-            color: '#4A3728',
+            color: '#3E6830',
             marginBottom: '0.75rem',
           }}
         >
@@ -581,7 +550,7 @@ export default function Home() {
             fontFamily: 'var(--font-raleway), sans-serif',
             fontWeight: 300,
             fontSize: '0.8rem',
-            color: '#9B8070',
+            color: '#6B8A58',
             letterSpacing: '0.05em',
             marginBottom: '2.5rem',
           }}
@@ -593,7 +562,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 py-16 px-6 text-center flex flex-col items-center gap-4">
+      <footer className="relative z-10 py-16 px-4 sm:px-6 text-center flex flex-col items-center gap-4">
         <div style={{ marginBottom: '0.5rem', opacity: 0.6 }}>
           <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '80px' }}>
             <path d="M60 38 L60 5" stroke="#B8C4B1" strokeWidth="0.7" strokeLinecap="round" />
@@ -644,7 +613,7 @@ export default function Home() {
             color: '#B8C4B1',
           }}
         >
-          Максим & Надя · 03.09.2026
+          Максим & Надежда · 03.09.2026
         </p>
       </footer>
     </main>
