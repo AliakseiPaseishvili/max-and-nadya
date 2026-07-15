@@ -34,15 +34,14 @@ export default function LocationSection() {
         </div>
       </div>
 
-      <Photo src="/figma/venue-794df8.png" alt="Усадьба «Дольче Вита»" ratio="390 / 259" />
+      <Photo src="/figma/venue-794df8.png" alt="Усадьба «Дольче Вита»" ratio="390 / 259" objectFit="contain" />
 
-      <div style={{ padding: '8px 20px' }}>
+      <div style={{ padding: '8px 20px', display: 'flex', justifyContent: 'center' }}>
         <a
           href={MAP_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="pill-button pill-button--light"
-          style={{ width: '100%' }}
         >
           Открыть карту
         </a>

@@ -8,6 +8,7 @@ export default function Photo({
   className,
   style,
   priority,
+  objectFit = 'cover',
 }: {
   src: string;
   alt: string;
@@ -15,6 +16,7 @@ export default function Photo({
   className?: string;
   style?: React.CSSProperties;
   priority?: boolean;
+  objectFit?: React.CSSProperties['objectFit'];
 }) {
   return (
     <div
@@ -26,7 +28,7 @@ export default function Photo({
         alt={alt}
         fill
         sizes="(max-width: 430px) 100vw, 430px"
-        style={{ objectFit: 'cover' }}
+        style={{ objectFit }}
         priority={priority}
       />
     </div>

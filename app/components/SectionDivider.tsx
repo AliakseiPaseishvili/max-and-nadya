@@ -20,7 +20,7 @@ export default function SectionDivider() {
       <img
         src="/figma/divider-border.svg"
         alt=""
-        style={{ display: 'block', width: '100%', minHeight: '50px', height: 'auto' }}
+        style={{ display: 'block', width: '100%', height: 'clamp(90px, 14vw, 200px)', objectFit: 'cover', marginTop: '-5%' }}
       />
 
       <Image
@@ -30,9 +30,9 @@ export default function SectionDivider() {
         height={156}
         style={{
           position: 'absolute',
-          left: '-45px',
-          bottom: '-35px',
-          width: 'clamp(88px, 26vw, 118px)',
+          left: '-7%',
+          bottom: '-10%',
+          width: 'clamp(96px, 22vw, 260px)',
           height: 'auto',
           transform: 'rotate(180deg)',
         }}
@@ -45,9 +45,9 @@ export default function SectionDivider() {
         height={156}
         style={{
           position: 'absolute',
-          right: '-45px',
-          bottom: '-35px',
-          width: 'clamp(88px, 26vw, 118px)',
+          right: '-7%',
+          bottom: '-10%',
+          width: 'clamp(96px, 22vw, 260px)',
           height: 'auto',
           transform: 'scaleX(-1) rotate(180deg)',
         }}
