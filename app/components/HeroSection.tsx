@@ -12,7 +12,7 @@ export default function HeroSection() {
         position: 'relative',
         display: 'flex',
         justifyContent: 'center',
-        padding: '11% 20px 9%',
+        padding: '11% 20px max(9%, 76px)',
         backgroundImage: "url('/figma/rsvp-bg.png')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -71,7 +71,7 @@ export default function HeroSection() {
           style={{
             position: 'absolute',
             top: '16cqh',
-            left: '50%',
+            left: '33%',
             transform: 'translateX(-62%)',
             width: '35cqw',
             aspectRatio: '1 / 1',
@@ -178,6 +178,19 @@ export default function HeroSection() {
           </span>
         </div>
       </div>
+
+      {/* Olive rounded band bridging into the greeting section below */}
+      <div
+        className="card-olive round-top-80"
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: 0,
+          width: '100%',
+          height: '60px',
+        }}
+      />
     </section>
   );
 }

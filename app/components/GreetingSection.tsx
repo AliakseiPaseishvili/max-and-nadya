@@ -3,8 +3,10 @@ import Photo from './Photo';
 export default function GreetingSection() {
   return (
     <section
-      className="card-olive round-top-80 animate-fade-in-up"
+      className="card-olive animate-fade-in-up"
       style={{
+        position: 'relative',
+        zIndex: 1,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -13,8 +15,7 @@ export default function GreetingSection() {
       }}
     >
       <div
-        className="masked-photo animate-float"
-        style={{ width: '75%', maxWidth: '294px' }}
+        style={{ position: 'relative', width: '75%', maxWidth: '294px' }}
       >
         <Photo
           src="/figma/greeting-21bea4.png"
@@ -22,6 +23,17 @@ export default function GreetingSection() {
           ratio="294 / 357"
           style={{ borderRadius: '52px 52px 0 0' }}
           priority
+        />
+        <div
+          style={{
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            bottom: 0,
+            height: '90px',
+            background: 'linear-gradient(to top, #505521, transparent)',
+            pointerEvents: 'none',
+          }}
         />
       </div>
 
@@ -38,7 +50,7 @@ export default function GreetingSection() {
           style={{
             fontSize: 'clamp(1.7rem, 8vw, 2rem)',
             color: '#FFFBF0',
-            alignSelf: 'flex-start',
+            textAlign: 'center',
           }}
         >
           Дорогие и любимые!

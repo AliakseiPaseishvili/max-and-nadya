@@ -129,32 +129,6 @@ body::before {
   line-height: 1.5;
 }
 
-/* ── Decorative masked photo (recreates Figma "Mask group" overlays) ── */
-/* A photo sitting over an offset tinted rectangle that peeks out behind it. */
-.masked-photo {
-  position: relative;
-  display: inline-block;
-  isolation: isolate;
-}
-
-.masked-photo > * {
-  position: relative;
-  z-index: 1;
-}
-
-.masked-photo::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  transform: translate(14px, 16px);
-  background: #CAC9B2;
-  z-index: 0;
-}
-
-.masked-photo--pink::after {
-  background: #E2AAAC;
-}
-
 /* ── Line-art illustration tile (envelope / phone / bouquet / glasses) ── */
 .illust-tile {
   position: relative;
