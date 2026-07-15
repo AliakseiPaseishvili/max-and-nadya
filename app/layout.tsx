@@ -1,19 +1,18 @@
 import type { Metadata } from "next";
-import { Cormorant, Raleway } from "next/font/google";
+import { Forum, Marck_Script } from "next/font/google";
 import "./globals.css";
 
-const cormorant = Cormorant({
-  variable: "--font-cormorant",
+const forum = Forum({
+  variable: "--font-forum",
   subsets: ["latin", "cyrillic"],
-  weight: ["300", "400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: ["400"],
   display: "swap",
 });
 
-const raleway = Raleway({
-  variable: "--font-raleway",
+const marckScript = Marck_Script({
+  variable: "--font-script",
   subsets: ["latin", "cyrillic"],
-  weight: ["300", "400", "500"],
+  weight: ["400"],
   display: "swap",
 });
 
@@ -28,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={`${cormorant.variable} ${raleway.variable}`}>
+    <html lang="ru" className={`${forum.variable} ${marckScript.variable}`}>
       <body>{children}</body>
     </html>
   );

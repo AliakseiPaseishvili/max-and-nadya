@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-cream: #FAF6F0;
-  --color-blush: #F2D8D0;
-  --color-rose: #D4A5A0;
-  --color-rose-deep: #B87B75;
-  --color-sage: #B8C4B1;
-  --color-gold: #C6A97A;
-  --color-bark: #3E6830;
-  --color-muted: #6B8A58;
-  --font-display: var(--font-cormorant);
-  --font-body: var(--font-raleway);
+  --color-cream: #FFFBF0;
+  --color-olive: #505521;
+  --color-olive-deep: #284503;
+  --color-olive-mid: #606D31;
+  --color-sage-muted: #CAC9B2;
+  --color-pink: #E2AAAC;
+  --color-pink-soft: rgba(207, 117, 126, 0.6);
+  --color-card-border: #CACCB0;
+  --color-input-border: #969774;
+  --font-display: var(--font-forum);
+  --font-script-family: var(--font-script);
 }
 
 *,
@@ -25,40 +26,27 @@ html {
 }
 
 body {
-  background-color: #FAF6F0;
-  color: #3E6830;
-  font-family: var(--font-raleway), sans-serif;
+  background-color: #FFFBF0;
+  color: #284503;
+  font-family: var(--font-forum), serif;
   overflow-x: hidden;
   position: relative;
 }
 
-/* Ambient background gradients */
+/* Ambient background wash */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 15% 25%, rgba(242, 216, 208, 0.45) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 60% at 85% 75%, rgba(184, 196, 177, 0.3) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 40% at 70% 20%, rgba(198, 169, 122, 0.12) 0%, transparent 60%);
+    radial-gradient(ellipse 55% 45% at 12% 20%, rgba(226, 170, 172, 0.16) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 55% at 88% 78%, rgba(80, 85, 33, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 40% at 75% 15%, rgba(202, 201, 178, 0.18) 0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
 }
 
 /* ── Animations ── */
-
-@keyframes petalFall {
-  0% {
-    transform: translateY(-60px) rotate(0deg) translateX(0px);
-    opacity: 0;
-  }
-  8% { opacity: 0.55; }
-  92% { opacity: 0.25; }
-  100% {
-    transform: translateY(105vh) rotate(600deg) translateX(60px);
-    opacity: 0;
-  }
-}
 
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -67,24 +55,13 @@ body::before {
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(32px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
-}
-
-@keyframes revealLine {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
 }
 
 /* ── Utility classes ── */
@@ -101,44 +78,227 @@ body::before {
   animation: fadeIn 1.4s ease both;
 }
 
-.petal {
-  position: fixed;
-  pointer-events: none;
-  border-radius: 50% 5% 50% 5%;
-  animation: petalFall linear infinite;
-  z-index: 1;
-  top: -40px;
+/* ── Layout / structural helpers ── */
+
+/* Centered mobile column matching the 390px Figma frame */
+.page-shell {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
 }
 
-/* ── Section dividers ── */
+.card-olive {
+  background: #505521;
+  color: #FFFBF0;
+}
 
-.gold-line {
-  height: 1px;
-  background: linear-gradient(to right, transparent, #C6A97A 30%, #C6A97A 70%, transparent);
-  animation: revealLine 1.5s ease both;
-  transform-origin: center;
+.round-top-80 {
+  border-radius: 80px 80px 0 0;
+}
+
+.round-80 {
+  border-radius: 80px;
+}
+
+/* ── Typography helpers ── */
+
+.script-title {
+  font-family: var(--font-script), cursive;
+  color: #284503;
+  font-weight: 400;
+  line-height: 1;
+  font-size: clamp(2.6rem, 12vw, 3.4rem);
+}
+
+.script-title--light {
+  color: #FFFBF0;
+}
+
+.section-heading {
+  font-family: var(--font-forum), serif;
+  font-size: clamp(1.6rem, 7vw, 2rem);
+  line-height: 1.2;
+  color: #284503;
+}
+
+.body-text {
+  font-family: var(--font-forum), serif;
+  font-size: clamp(1.05rem, 4.6vw, 1.35rem);
+  line-height: 1.5;
+}
+
+/* ── Decorative masked photo (recreates Figma "Mask group" overlays) ── */
+/* A photo sitting over an offset tinted rectangle that peeks out behind it. */
+.masked-photo {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+}
+
+.masked-photo > * {
+  position: relative;
+  z-index: 1;
+}
+
+.masked-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translate(14px, 16px);
+  background: #CAC9B2;
+  z-index: 0;
+}
+
+.masked-photo--pink::after {
+  background: #E2AAAC;
+}
+
+/* ── Line-art illustration tile (envelope / phone / bouquet / glasses) ── */
+.illust-tile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14%;
+  background: #FFFBF0;
+  border: 1px solid rgba(202, 204, 176, 0.5);
+  box-shadow: 0 6px 24px rgba(40, 69, 3, 0.18);
+  overflow: hidden;
+}
+
+.illust-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ── Pill button ── */
+
+.pill-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  font-family: var(--font-forum), serif;
+  font-size: clamp(1rem, 4vw, 1.25rem);
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.pill-button--light {
+  background: #F6F3E5;
+  border: 1px solid #CACCB0;
+  color: #606D31;
+}
+
+.pill-button--olive {
+  background: #5A5F2D;
+  border: 1px solid #969774;
+  color: #FFFBF0;
+}
+
+.pill-button:hover {
+  transform: translateY(-2px);
+}
+
+.pill-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  transform: none;
+}
+
+/* ── Timeline row ── */
+
+.time-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.time-row__time {
+  font-family: var(--font-forum), serif;
+  font-size: clamp(1.8rem, 8vw, 2.2rem);
+  color: #284503;
+  line-height: 1;
+}
+
+.time-row__desc {
+  font-family: var(--font-forum), serif;
+  font-size: clamp(1.05rem, 4.4vw, 1.3rem);
+  color: #606D31;
+  line-height: 1.4;
+  white-space: pre-line;
 }
 
 /* ── Countdown cards ── */
 
 .countdown-card {
-  background: rgba(250, 246, 240, 0.75);
-  border: 1px solid rgba(198, 169, 122, 0.3);
-  border-radius: 3px;
-  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1rem 0.5rem;
+  border: 1px solid #CACCB0;
+  border-radius: 16px;
+  background: #FFFEFC;
   transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
 .countdown-card:hover {
-  border-color: rgba(198, 169, 122, 0.6);
+  border-color: #969774;
   transform: translateY(-2px);
 }
 
-/* ── Quote ── */
+/* ── Form controls ── */
 
-.quote-text {
-  font-family: var(--font-cormorant), serif;
-  font-style: italic;
-  font-weight: 300;
-  color: #6B8A58;
+.segmented {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.5rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #969774;
+  border-radius: 16px;
+  font-family: var(--font-forum), serif;
+  font-size: clamp(1rem, 4vw, 1.15rem);
+  color: #FFFBF0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.segmented--active {
+  background: #73764A;
+}
+
+.segmented--inactive {
+  background: #505521;
+}
+
+.field-input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #969774;
+  outline: none;
+  font-family: var(--font-forum), serif;
+  font-size: clamp(1rem, 4vw, 1.15rem);
+  color: #FFFBF0;
+  transition: border-color 0.25s ease;
+}
+
+.field-input::placeholder {
+  color: #969774;
+}
+
+.field-input:focus {
+  border-color: #E2AAAC;
 }

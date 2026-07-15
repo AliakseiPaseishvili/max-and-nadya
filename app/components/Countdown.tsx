@@ -50,7 +50,7 @@ export default function Countdown() {
 
   if (!timeLeft) {
     return (
-      <div style={{ height: '140px' }} />
+      <div style={{ height: '120px' }} />
     );
   }
 
@@ -74,26 +74,27 @@ export default function Countdown() {
   ];
 
   return (
-    <div className="flex gap-3 md:gap-6 justify-center flex-wrap">
+    <div
+      style={{
+        display: 'flex',
+        gap: '8px',
+        justifyContent: 'center',
+        alignItems: 'stretch',
+        width: '100%',
+      }}
+    >
       {units.map(({ value, label }, i) => (
         <div
           key={i}
-          className="countdown-card flex flex-col items-center animate-fade-in-up"
-          style={{
-            padding: 'clamp(1rem, 3vw, 1.75rem) 0',
-            animationDelay: `${0.1 + i * 0.12}s`,
-            width: 'clamp(80px, 20vw, 120px)',
-          }}
+          className="countdown-card animate-fade-in-up"
+          style={{ flex: 1, animationDelay: `${0.1 + i * 0.12}s` }}
         >
           <div
             style={{
-              fontFamily: 'var(--font-cormorant), serif',
-              fontWeight: 300,
-              fontStyle: 'italic',
-              fontSize: 'clamp(2.8rem, 7vw, 4.5rem)',
-              color: '#3E6830',
+              fontFamily: 'var(--font-forum), serif',
+              fontSize: 'clamp(1.9rem, 9vw, 2.7rem)',
+              color: '#284503',
               lineHeight: 1,
-              letterSpacing: '-0.02em',
               fontVariantNumeric: 'tabular-nums',
             }}
           >
@@ -101,13 +102,10 @@ export default function Countdown() {
           </div>
           <div
             style={{
-              fontFamily: 'var(--font-raleway), sans-serif',
-              fontWeight: 300,
-              fontSize: '0.6rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.22em',
-              color: '#6B8A58',
-              marginTop: '0.6rem',
+              fontFamily: 'var(--font-forum), serif',
+              fontSize: 'clamp(0.8rem, 3.4vw, 1rem)',
+              color: '#606D31',
+              marginTop: '0.3rem',
               whiteSpace: 'nowrap',
             }}
           >
