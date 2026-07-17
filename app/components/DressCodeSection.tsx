@@ -70,9 +70,13 @@ export default function DressCodeSection() {
       </div>
 
       {/* wide reference photos */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0', width: '100%' }}>
-        <Photo src="/figma/dress-wide-1-6f103e.png" alt="" ratio="329 / 184" />
-        <Photo src="/figma/dress-wide-2-55282d.png" alt="" ratio="329 / 189" />
+      <div className="flex flex-col items-center justify-center w-full">
+        <div className="w-full md:w-1/2">
+          <Photo src="/figma/dress-wide-1-6f103e.png" alt="" ratio="329 / 184" />
+        </div>
+        <div className="w-full md:w-1/2">
+          <Photo src="/figma/dress-wide-2-55282d.png" alt="" ratio="329 / 189" />
+        </div>
       </div>
     </section>
   );

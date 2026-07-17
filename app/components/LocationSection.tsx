@@ -34,7 +34,12 @@ export default function LocationSection() {
         </div>
       </div>
 
-      <Photo src="/figma/venue-794df8.png" alt="Усадьба «Дольче Вита»" ratio="390 / 259" objectFit="contain" />
+      <Photo
+        src="/figma/House.png"
+        alt="Усадьба «Дольче Вита»"
+        ratio="390 / 259"
+        objectFit="contain"
+      />
 
       <div style={{ padding: '8px 20px', display: 'flex', justifyContent: 'center' }}>
         <a

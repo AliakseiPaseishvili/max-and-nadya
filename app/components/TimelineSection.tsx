@@ -18,13 +18,25 @@ export default function TimelineSection() {
         flexDirection: 'column',
         alignItems: 'center',
         gap: '3rem',
-        padding: '112px 20px 0',
+        padding: '20px 0',
         marginTop: '140px',
       }}
     >
-      <h2 className="script-title">Во сколько?</h2>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '2rem',
+          width: '100%',
+          backgroundImage: 'url(/figma/decor.png)',
+          backgroundSize: '100% auto',
+          backgroundPosition: 'top',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <h2 className="script-title" style={{ marginTop: 'clamp(4rem, 20vw, 16rem)' }}>Во сколько?</h2>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', width: '100%' }}>
         {timeline.map((t) => (
           <div key={t.time} className="time-row">
             <Heart size={40} />
@@ -35,8 +47,7 @@ export default function TimelineSection() {
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', width: '100%' }}>
-        <Photo src="/figma/timeline-1-75691b.png" alt="" ratio="584 / 290" />
-        <Photo src="/figma/timeline-2-54f3ce.png" alt="" ratio="457 / 305" />
+        <Photo src="/figma/flowers-and-table.png" alt="" ratio="1170 / 870" />
       </div>
     </section>
   );

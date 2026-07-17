@@ -26,7 +26,7 @@ export default function Countdown() {
 
   useEffect(() => {
     const calculate = () => {
-      const target = new Date('2026-09-03T16:00:00');
+      const target = new Date('2026-09-03T15:00:00');
       const now = new Date();
       const diff = target.getTime() - now.getTime();
 

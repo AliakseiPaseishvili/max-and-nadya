@@ -148,6 +148,116 @@ body::before {
   object-fit: contain;
 }
 
+/* Flowers illustration sits higher on mobile, lower on wider viewports */
+.details-illust--flowers {
+  top: 20%;
+}
+
+@media (min-width: 768px) {
+  .details-illust--flowers {
+    top: 70%;
+  }
+}
+
+/* Bottom divider corner sits lower on wider viewports */
+.details-divider-corner--bottom {
+  position: absolute;
+  right: -10%;
+  bottom: -5%;
+  width: 150px;
+}
+
+@media (min-width: 768px) {
+  .details-divider-corner--bottom {
+    right: -5%;
+    bottom: -5%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .details-divider-corner--bottom {
+     bottom: -12%;
+     width: 200px;
+  }
+}
+
+/* Top divider corner mirrors the bottom one, anchored top-left */
+.details-divider-corner--top {
+  position: absolute;
+  left: -10%;
+  top: -5%;
+  width: 150px;
+}
+
+@media (min-width: 768px) {
+  .details-divider-corner--top {
+    left: -5%;
+    top: -5%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .details-divider-corner--top {
+    top: -12%;
+    width: 200px;
+  }
+}
+
+/* Torn-paper borders on the last (RSVP) section — pull further past the
+   edge as the viewport widens: mobile → tablet → desktop */
+.last-section-border {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.last-section-border--top {
+  top: -5%;
+}
+
+.last-section-border--bottom {
+  bottom: -5%;
+}
+
+@media (min-width: 660px) {
+  .last-section-border--top {
+    top: -8%;
+  }
+  .last-section-border--bottom {
+    bottom: -8%;
+  }
+}
+
+@media (min-width: 768px) {
+  .last-section-border--top {
+    top: -10%;
+  }
+  .last-section-border--bottom {
+    bottom: -10%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .last-section-border--top {
+    top: -15%;
+  }
+  .last-section-border--bottom {
+    bottom: -15%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .last-section-border--top {
+    top: -20%;
+  }
+  .last-section-border--bottom {
+    bottom: -20%;
+  }
+}
+
 /* ── Pill button ── */
 
 .pill-button {
@@ -222,7 +332,6 @@ body::before {
   padding: 1rem 0.5rem;
   border: 1px solid #CACCB0;
   border-radius: 16px;
-  background: #FFFEFC;
   transition: border-color 0.3s ease, transform 0.3s ease;
 }
 

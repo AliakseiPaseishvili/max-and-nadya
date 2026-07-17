@@ -23,8 +23,8 @@ export default function CountdownSection() {
         До торжества осталось совсем немного времени
       </p>
 
-      <div style={{ position: 'relative', width: '100%' }}>
-        <Photo src="/figma/countdown-strip-798a59.png" alt="" ratio="422 / 108" />
+      <div style={{ position: 'relative', width: '100%' }} className="flex justify-center">
+        <Photo src="/figma/rings.png" alt="" ratio="422 / 108" style={{ width: '50%', }} />
       </div>
 
       <Countdown />
