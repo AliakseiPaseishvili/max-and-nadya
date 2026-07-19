@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 /* Decorative divider that sits on the seam between two sections:
    a wavy deckled-edge line spanning the width, with a watercolor
@@ -8,50 +8,45 @@ export default function SectionDivider() {
     <div
       aria-hidden
       style={{
-        position: 'relative',
+        position: "relative",
         zIndex: 20,
-        width: '100%',
-        margin: '-18px auto 0',
+        width: "100%",
+        margin: "-18px auto 0",
         lineHeight: 0,
-        pointerEvents: 'none',
+        pointerEvents: "none",
       }}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/figma/divider-border.svg"
-        alt=""
-        style={{ display: 'block', width: '100%', height: 'clamp(90px, 14vw, 200px)', objectFit: 'cover', marginTop: '-5%' }}
-      />
-
-      <Image
-        src="/figma/divider-corner.png"
-        alt=""
-        width={110}
-        height={156}
+      <div
         style={{
-          position: 'absolute',
-          left: '-7%',
-          bottom: '-10%',
-          width: 'clamp(96px, 22vw, 260px)',
-          height: 'auto',
-          transform: 'rotate(180deg)',
+          position: "relative",
+          width: "100%",
+          height: "clamp(90px, 14vw, 200px)",
+          marginTop: "-5%",
         }}
-      />
-
-      <Image
-        src="/figma/divider-corner.png"
-        alt=""
-        width={110}
-        height={156}
-        style={{
-          position: 'absolute',
-          right: '-7%',
-          bottom: '-10%',
-          width: 'clamp(96px, 22vw, 260px)',
-          height: 'auto',
-          transform: 'scaleX(-1) rotate(180deg)',
-        }}
-      />
+      >
+        <Image
+          src="/figma/divider-border.svg"
+          alt=""
+          fill
+          style={{ objectFit: "cover" }}
+        />
+        <Image
+          src="/figma/divider-corner.png"
+          alt=""
+          width={110}
+          height={156}
+          className="divider-corner divider-corner--left"
+          style={{ transform: "rotate(180deg)" }}
+        />
+        <Image
+          src="/figma/divider-corner.png"
+          alt=""
+          width={110}
+          height={156}
+          className="divider-corner divider-corner--right"
+          style={{ transform: "scaleX(-1) rotate(180deg)" }}
+        />
+      </div>
     </div>
   );
 }

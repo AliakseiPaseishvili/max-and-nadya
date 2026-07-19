@@ -203,6 +203,40 @@ body::before {
   }
 }
 
+/* Section-divider blossom corners — pull further past the edge and grow
+   as the viewport widens: mobile → tablet → desktop, mirroring the Details corners */
+.divider-corner {
+  position: absolute;
+  bottom: -60px;
+  width: 200px;
+  height: auto;
+}
+
+.divider-corner--left {
+  left: -15%;
+}
+
+.divider-corner--right {
+  right: -15%;
+}
+
+@media (min-width: 768px) {
+
+  .divider-corner--left {
+    left: -7%;
+  }
+
+  .divider-corner--right {
+    right: -7%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .divider-corner {
+    width: 260px;
+  }
+}
+
 /* Torn-paper borders on the last (RSVP) section — pull further past the
    edge as the viewport widens: mobile → tablet → desktop */
 .last-section-border {

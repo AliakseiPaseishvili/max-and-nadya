@@ -3,7 +3,7 @@ import Photo from './Photo';
 export default function GreetingSection() {
   return (
     <section
-      className="card-olive animate-fade-in-up"
+      className="card-olive"
       style={{
         position: 'relative',
         zIndex: 1,

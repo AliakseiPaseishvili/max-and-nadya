@@ -7,7 +7,6 @@ import Image from 'next/image';
 export default function HeroSection() {
   return (
     <section
-      className="animate-fade-in"
       style={{
         position: 'relative',
         display: 'flex',
@@ -186,7 +185,7 @@ export default function HeroSection() {
           position: 'absolute',
           left: 0,
           right: 0,
-          bottom: 0,
+          bottom: -1,
           width: '100%',
           height: '60px',
         }}
