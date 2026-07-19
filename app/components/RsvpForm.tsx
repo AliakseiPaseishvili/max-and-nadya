@@ -18,17 +18,27 @@ export default function RsvpForm() {
   const [attending, setAttending] = useState<Attending>(null);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!attending || !name.trim() || !email.trim()) return;
 
     setLoading(true);
-    // TODO: подключите свой бэкенд или email-сервис (например, Resend, EmailJS, Formspree)
-    // Пример: await fetch('/api/rsvp', { method: 'POST', body: JSON.stringify({ name, email, attending }) });
-    await new Promise((r) => setTimeout(r, 700));
-    setSubmitted(true);
-    setLoading(false);
+    setError('');
+    try {
+      const res = await fetch('/api/rsvp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, attending }),
+      });
+      if (!res.ok) throw new Error('request failed');
+      setSubmitted(true);
+    } catch {
+      setError('Не удалось отправить ответ. Попробуйте ещё раз.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -102,14 +112,21 @@ export default function RsvpForm() {
         </div>
       </div>
 
-      <button
-        type="submit"
-        disabled={loading || !isReady}
-        className="pill-button pill-button--olive"
-        style={{ width: '100%' }}
-      >
-        {loading ? 'Отправляем…' : 'Отправить'}
-      </button>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+        <button
+          type="submit"
+          disabled={loading || !isReady}
+          className="pill-button pill-button--olive"
+          style={{ width: '100%' }}
+        >
+          {loading ? 'Отправляем…' : 'Отправить'}
+        </button>
+        {error && (
+          <p style={{ color: '#E7B7A3', fontSize: 'clamp(0.9rem, 3.5vw, 1rem)', textAlign: 'center' }}>
+            {error}
+          </p>
+        )}
+      </div>
     </form>
   );
 }

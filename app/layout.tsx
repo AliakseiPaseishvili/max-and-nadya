@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Forum, Marck_Script } from "next/font/google";
+import { Forum } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const forum = Forum({
@@ -9,10 +10,9 @@ const forum = Forum({
   display: "swap",
 });
 
-const marckScript = Marck_Script({
+const floriselScript = localFont({
+  src: "../public/Шрифты/Floriselscript.ttf",
   variable: "--font-script",
-  subsets: ["latin", "cyrillic"],
-  weight: ["400"],
   display: "swap",
 });
 
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={`${forum.variable} ${marckScript.variable}`}>
+    <html lang="ru" className={`${forum.variable} ${floriselScript.variable}`}>
       <body>{children}</body>
     </html>
   );
